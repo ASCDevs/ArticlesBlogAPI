@@ -2,29 +2,28 @@ namespace ArticlesBlogAPI_UI.Models
 {
     public class Article
     {
-        public int idArticle { get; set; }
+        public int IdArticle { get; set; }
 
-        public string title { get; set; }
-        
-        public int idAuthor { get; set; }
+        public string? Title { get; set; }
 
-        public string datePublic { get; set; }
+        public int? IdAuthor { get; set; }
 
-        public string textArticle { get ;set;}
+        public string? DatePublic { get; set; }
 
-        public IEnumerable<string> tags {get;set;}
+        public string? TextArticle { get; set; }
+
+        public List<string>? Tags { get; set; }
 
         public int getIdArticle()
         {
-            return idArticle;
+            return IdArticle;
         }
 
         public bool hasTag(string tagText)
         {
-            if (tags == null) return false;
-            if (tags.Contains(tagText)) return true;
+            if (Tags == null) return false;
+            if (Tags.Contains(tagText)) return true;
             return false;
         }
-        
     }
 }

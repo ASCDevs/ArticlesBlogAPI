@@ -2,9 +2,8 @@
 {
     public class Author
     {
-        public int idAuthor { get; set; }
-        public string name { get; set; }
-
-        public string urlPhoto { get; set; } 
+        public int IdAuthor { get; set; }
+        public string? Name { get; set; }
+        public string? UrlPhoto { get; set; }
     }
 }
