@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Blog API";
+    Layout = "_Layout";
+}
+<style>
+    @*body{background-color:#fafafa;}*@
+</style>
+
+@section Scripts{
+<script>
+    $("#mn-autores").addClass("active");
+</script>
+<script src="~/js/Blog/Main.js"></script>
+}
+
+<partial name="_MenuBlog.cshtml"></partial>
+
+<div class="row p-3">
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Procurar autores" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
+</div>
+<div class="row gap-3 d-flex justify-content-center">
+
+    <div class="card d-flex flex-row" style="max-width: 50rem;">
+        <div class="d-flex justify-content-center align-items-center">
+            <img src="https://github.com/ascdevs.png" style="max-width:8rem; border-radius: 50%" alt="...">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Autor 1</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a href="#" class="btn btn-primary">Artigos escritos</a>
+        </div>
+    </div>
+</div>
