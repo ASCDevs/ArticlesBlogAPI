@@ -14,6 +14,10 @@ namespace ArticlesBlogAPI_UI.Models
 
         public List<string>? Tags { get; set; }
 
+        public string? UrlBanner { get; set; }
+
+        public string? Summary { get; set; }
+
         public int getIdArticle()
         {
             return IdArticle;

@@ -90,7 +90,9 @@ namespace ArticlesBlogAPI_UI.Controllers
                                 As vantagens que um negócio tem ao adotar uma postura sustentável são várias, não importa se o empreendimento é de grande, pequeno ou médio porte.",
                 IdAuthor = 1,
                 Title = "IOT e Sustentabilidade",
-                Tags = new List<string> { "IOT", "Sustentabilidade", "Programação" }
+                Tags = new List<string> { "IOT", "Sustentabilidade", "Programação" },
+                Summary = @"Artigo que traz uma relação entre Internet das Coisas e o tema de sustentabilidade, mostrando a aplicabilidade.",
+                UrlBanner = "https://source.unsplash.com/4NhqyQeErP8/800x300"
             });
 
             articles.Add(new Article
@@ -102,7 +104,9 @@ namespace ArticlesBlogAPI_UI.Controllers
                                 Segundo o portal Computerworld, 39% das empresas acreditam que vão precisar contratar gestores de projetos ainda em 2016. Quem atua no mercado corporativo sabe que, cada vez mais, os projetos são integrados. Isto é, existem profissionais de diversas especialidades trabalhando em conjunto.",
                 IdAuthor = 2,
                 Title = "Formação de profissionais da área de TI",
-                Tags = new List<string> { "Mercado", "TI", "Estudo" }
+                Tags = new List<string> { "Mercado", "TI", "Estudo" },
+                Summary = @"Nos dias de hoje o mercado de TI está super aquiecido porém é importante estar atento aos tipos de formações da área e conseguir focar os estudos.",
+                UrlBanner = "https://source.unsplash.com/Kz8nHVg_tGI/800x300"
             });
 
             articles.Add(new Article
@@ -113,7 +117,9 @@ namespace ArticlesBlogAPI_UI.Controllers
                                 Grandes coisas em automação podem serem feitas adicionando ao Arduino um Ethernet Shield, permitindo a você transformar o pequeno microcontrolador em um dispositivo conectado à Internet, capaz de mudar o estado de luzes, TVs, máquinas de café – praticamente qualquer coisa que você pode pensar – ligado e desligado, utilizando uma interface baseada em browser ou um temporizador.",
                 IdAuthor = 3,
                 Title = "Cadeiras automatizadas com arduino",
-                Tags = new List<string> { "Arduino", "Cadeiras", "Programação" }
+                Tags = new List<string> { "Arduino", "Cadeiras", "Programação" },
+                Summary = @"A automatização hoje em dia é possível através de várias tecnologias, entre elas o arduino, no artigo abordaremos como automatizar a regulagem de uma cadeira de escritório.",
+                UrlBanner = "https://source.unsplash.com/zP7X_B86xOg/800x300"
             });
 
             this.authors = new List<Author>();
