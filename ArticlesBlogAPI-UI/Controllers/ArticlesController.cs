@@ -117,23 +117,29 @@ namespace ArticlesBlogAPI_UI.Controllers
             });
 
             this.authors = new List<Author>();
-            authors.Add(new Author
-            {
+            authors.Add(new Author 
+            { 
                 IdAuthor = 1,
                 Name = "Heloísa Silva",
-                UrlPhoto = "https://github.com/HeloisaSil.png"
+                UrlPhoto = "https://github.com/HeloisaSil.png",
+                Institute = "UNIP - Universidade Paulista",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
             });
             authors.Add(new Author
             {
-                IdAuthor = 2,
+                IdAuthor = 2, 
                 Name = "Rafaela Santos",
-                UrlPhoto = "https://github.com/rafass04.png"
+                UrlPhoto = "https://github.com/rafass04.png",
+                Institute = "UNIP - Universidade Paulista",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
             });
             authors.Add(new Author
             {
                 IdAuthor = 3,
                 Name = "Alexandre Santos",
-                UrlPhoto = "https://github.com/ascdevs.png"
+                UrlPhoto = "https://github.com/ascdevs.png",
+                Institute = "UNIP - Universidade Paulista",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
             });
         }
     }
