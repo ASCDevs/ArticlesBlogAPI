@@ -7,14 +7,13 @@ namespace ArticlesBlogAPI_UI.Controllers
     [Route("[controller]")]
     public class ArticlesController : ControllerBase
     {
-        private List<Article> articles;
-        private List<Author> authors;
+        private List<Article>? articles;
+        private List<Author>? authors;
         private readonly ILogger<ArticlesController> _logger;
 
-        public ArticlesController(List<Article> articles, List<Author> authors, ILogger<ArticlesController> logger)
+        public ArticlesController(ILogger<ArticlesController> logger) 
         {
-            this.articles = articles ?? throw new ArgumentNullException(nameof(articles));
-            this.authors = authors ?? throw new ArgumentNullException(nameof(authors));
+            this.MockData();
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
@@ -22,14 +21,14 @@ namespace ArticlesBlogAPI_UI.Controllers
         [Route("All")]
         public IEnumerable<Article> GetAllArticles()
         {
-            return articles.ToList();
+            return articles!.ToList();
         }
 
         [HttpGet]
         [Route("Authors")]
         public IEnumerable<Author> GetAllAuthors()
         {
-            return this.authors.ToList();
+            return this.authors!.ToList();
         }
 
         [HttpGet]
@@ -37,7 +36,7 @@ namespace ArticlesBlogAPI_UI.Controllers
         public IActionResult GetArticleById(int id_article)
         {
             _logger.LogInformation("Searching articles by id");
-            Article? article = articles.FirstOrDefault(x => x.IdArticle == id_article);
+            Article? article = articles!.FirstOrDefault(x => x.IdArticle == id_article);
             if (article == null) return NotFound(new { success = false, message = "Article not found." });
 
             return Ok(article);
@@ -48,7 +47,7 @@ namespace ArticlesBlogAPI_UI.Controllers
         public IActionResult GetAuthorById(int id_author)
         {
             _logger.LogInformation("Searching articles by authors");
-            Author? author = authors.FirstOrDefault(x => x.IdAuthor == id_author);
+            Author? author = authors!.FirstOrDefault(x => x.IdAuthor == id_author);
             if (author == null) return NotFound(new { success = false, message = "Author not found." });
 
             return Ok(author);
@@ -59,7 +58,7 @@ namespace ArticlesBlogAPI_UI.Controllers
         public IActionResult SearchAuthorsByName(string authorName)
         {
             _logger.LogInformation("Searching articles by authors");
-            List<Author> authorsFound = authors.AsQueryable().Where(x => x.Name!.Trim().ToLower().Contains(authorName.ToLower().Trim())).ToList();
+            List<Author> authorsFound = authors!.AsQueryable().Where(x => x.Name!.Trim().ToLower().Contains(authorName.ToLower().Trim())).ToList();
             if (authorsFound == null || authorsFound.Count == 0) return NotFound(new { success = false, message = "No author found with the given Name." });
 
             return Ok(authorsFound);
@@ -71,7 +70,7 @@ namespace ArticlesBlogAPI_UI.Controllers
         {
             _logger.LogInformation("Searching articles by term");
             List<string> words = searchedText.Split(" ").ToList();
-            List<Article> articlesFound = articles.AsQueryable().Where(x => x.TextArticle!.Trim().ToLower().Contains(searchedText.ToLower().Trim()) || words.Any(w => x.TextArticle.Trim().ToLower().Contains(w)) || words.Any(w => x.Tags!.Any(y => y.Trim().ToLower().Contains(w)))).ToList();
+            List<Article> articlesFound = articles!.AsQueryable().Where(x => x.TextArticle!.Trim().ToLower().Contains(searchedText.ToLower().Trim()) || words.Any(w => x.TextArticle.Trim().ToLower().Contains(w)) || words.Any(w => x.Tags!.Any(y => y.Trim().ToLower().Contains(w)))).ToList();
             if (articlesFound == null || articlesFound.Count() == 0) return NotFound(new { success = false, message = "No articles found matching your search term." });
 
             return Ok(articlesFound);
