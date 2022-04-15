@@ -118,19 +118,25 @@ namespace ArticlesBlogAPI_UI.Controllers
             { 
                 idAuthor = 1,
                 name = "Heloísa Silva",
-                urlPhoto = "https://github.com/HeloisaSil.png"
+                urlPhoto = "https://github.com/HeloisaSil.png",
+                institute = "UNIP - Universidade Paulista",
+                biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
             });
             authors.Add(new Author
             {
                 idAuthor = 2, 
                 name = "Rafaela Santos",
-                urlPhoto = "https://github.com/rafass04.png"
+                urlPhoto = "https://github.com/rafass04.png",
+                institute = "UNIP - Universidade Paulista",
+                biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
             });
             authors.Add(new Author
             {
                 idAuthor = 3,
                 name = "Alexandre Santos",
-                urlPhoto = "https://github.com/ascdevs.png"
+                urlPhoto = "https://github.com/ascdevs.png",
+                institute = "UNIP - Universidade Paulista",
+                biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
             });
         }
     }
