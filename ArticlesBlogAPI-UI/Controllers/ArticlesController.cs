@@ -119,7 +119,7 @@ namespace ArticlesBlogAPI_UI.Controllers
                                 Grandes coisas em automação podem serem feitas adicionando ao Arduino um Ethernet Shield, permitindo a você transformar o pequeno microcontrolador em um dispositivo conectado à Internet, capaz de mudar o estado de luzes, TVs, máquinas de café – praticamente qualquer coisa que você pode pensar – ligado e desligado, utilizando uma interface baseada em browser ou um temporizador.",
                 IdAuthor = 3,
                 Title = "Cadeiras automatizadas com arduino",
-                Tags = new List<string> { "Arduino", "Cadeiras", "Programação" },
+                Tags = new List<string> { "Arduino", "Cadeiras", "Programação","hardware" },
                 Summary = @"A automatização hoje em dia é possível através de várias tecnologias, entre elas o arduino, no artigo abordaremos como automatizar a regulagem de uma cadeira de escritório.",
                 UrlBanner = "https://source.unsplash.com/zP7X_B86xOg/800x300"
             });
