@@ -11,7 +11,7 @@ namespace ArticlesBlogAPI_UI.Controllers
         private List<Author>? authors;
         private readonly ILogger<ArticlesController> _logger;
 
-        public ArticlesController(ILogger<ArticlesController> logger) 
+        public ArticlesController(ILogger<ArticlesController> logger)
         {
             this.MockData();
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -37,7 +37,7 @@ namespace ArticlesBlogAPI_UI.Controllers
         {
             _logger.LogInformation("Searching articles by id");
             Article? article = articles!.FirstOrDefault(x => x.IdArticle == id_article);
-            if (article == null) return NotFound(new { success = false, message = "Article not found." });
+            if (article == null) return Ok(new { success = false, message = "Artigo não encontrado." });
 
             return Ok(article);
         }
@@ -46,11 +46,13 @@ namespace ArticlesBlogAPI_UI.Controllers
         [Route("Authors/{id_author}")]
         public IActionResult GetAuthorById(int id_author)
         {
+    
             _logger.LogInformation("Searching articles by authors");
             Author? author = authors!.FirstOrDefault(x => x.IdAuthor == id_author);
-            if (author == null) return NotFound(new { success = false, message = "Author not found." });
+            if (author == null) return Ok(new { success = false, message = "Autor não encontrado." });
 
             return Ok(author);
+
         }
 
         [HttpGet]
@@ -59,7 +61,7 @@ namespace ArticlesBlogAPI_UI.Controllers
         {
             _logger.LogInformation("Searching articles by authors");
             List<Author> authorsFound = authors!.AsQueryable().Where(x => x.Name!.Trim().ToLower().Contains(authorName.ToLower().Trim())).ToList();
-            if (authorsFound == null || authorsFound.Count == 0) return NotFound(new { success = false, message = "No author found with the given Name." });
+            if (authorsFound == null || authorsFound.Count == 0) return Ok(new { success = false, message = "Nenhum autor encontrado com esse nome." });
 
             return Ok(authorsFound);
         }
@@ -71,7 +73,7 @@ namespace ArticlesBlogAPI_UI.Controllers
             _logger.LogInformation("Searching articles by term");
             List<string> words = searchedText.Split(" ").ToList();
             List<Article> articlesFound = articles!.AsQueryable().Where(x => x.TextArticle!.Trim().ToLower().Contains(searchedText.ToLower().Trim()) || words.Any(w => x.TextArticle.Trim().ToLower().Contains(w)) || words.Any(w => x.Tags!.Any(y => y.Trim().ToLower().Contains(w)))).ToList();
-            if (articlesFound == null || articlesFound.Count() == 0) return NotFound(new { success = false, message = "No articles found matching your search term." });
+            if (articlesFound == null || articlesFound.Count() == 0) return Ok(new { success = false, message = "Nenhum artigo encontrado com o termo dado." });
 
             return Ok(articlesFound);
         }
@@ -123,8 +125,8 @@ namespace ArticlesBlogAPI_UI.Controllers
             });
 
             this.authors = new List<Author>();
-            authors.Add(new Author 
-            { 
+            authors.Add(new Author
+            {
                 IdAuthor = 1,
                 Name = "Heloísa Silva",
                 UrlPhoto = "https://github.com/HeloisaSil.png",
@@ -133,7 +135,7 @@ namespace ArticlesBlogAPI_UI.Controllers
             });
             authors.Add(new Author
             {
-                IdAuthor = 2, 
+                IdAuthor = 2,
                 Name = "Rafaela Santos",
                 UrlPhoto = "https://github.com/rafass04.png",
                 Institute = "UNIP - Universidade Paulista",

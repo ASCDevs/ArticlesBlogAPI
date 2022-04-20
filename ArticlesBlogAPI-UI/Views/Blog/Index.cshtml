@@ -3,9 +3,7 @@
     Layout = "_Layout";
 }
 <style>
-    @* body {
-        background-color: #fafafa;
-    } *@
+    @*body{background-color:#fafafa;}*@
 </style>
 
 @section Scripts{
@@ -22,6 +20,15 @@
         <input id="campo-busca-artigo" class="form-control me-2" type="search" placeholder="Procurar artigos" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
     </form>
+</div>
+
+<div id="aviso-nao-encontrado" class="row gap-3" style="display: none; justify-content: center;">
+    <div class="row d-flex justify-content-center" style="max-width: 50rem; display: none; justify-content: center;">
+        <h1 class="display-6">Nenhum artigo encontrado com o termo dado.</h1>
+        <div style="max-width: 22rem;">
+            <img src="~/imgs/no_search.svg" alt="">
+        </div>
+    </div>
 </div>
 <div class="row gap-3 d-flex justify-content-center" id="feed-articles">
 

@@ -16,10 +16,19 @@
 <partial name="_MenuBlog.cshtml"></partial>
 
 <div class="row p-3">
-    <form id="frm-procura-autores" class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Procurar autores" aria-label="Search">
+    <form id="frm-procura-autores" class="d-flex" onsubmit="return false">
+        <input id="campo-busca-autores" class="form-control me-2" type="search" placeholder="Procurar autores" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
     </form>
+</div>
+
+<div id="aviso-nao-encontrado" class="row gap-3" style="display: none; justify-content: center;">
+    <div class="row d-flex justify-content-center" style="max-width: 50rem; display: none; justify-content: center;">
+        <h1 class="display-6">Nenhum artigo encontrado com o termo dado.</h1>
+        <div style="max-width: 22rem;">
+            <img src="~/imgs/no_search.svg" alt="">
+        </div>
+    </div>
 </div>
 <div class="row gap-3 d-flex justify-content-center" id="feed-authors">
 
