@@ -78,6 +78,16 @@ namespace ArticlesBlogAPI_UI.Controllers
             return Ok(articlesFound);
         }
 
+        [HttpGet]
+        [Route("AuthorWritten/{id_author}")]
+        public IActionResult SearchArticlesByAuthor(int id_author){
+            _logger.LogInformation("Searching articles by author id");
+            List<Article> articlesFound = articles!.AsQueryable().Where(x => x.IdAuthor == id_author).ToList();
+            if (articlesFound == null || articlesFound.Count() == 0) return Ok(new { success = false, message = "Nenhum artigo encontrado para o autor." });
+            
+            return Ok(articlesFound);
+        }
+
         private void MockData()
         {
             this.articles = new List<Article>();

@@ -1,10 +1,15 @@
 <!-- Scrollable modal -->
-<div class="modal fade" id="modal-artigo" tabindex="-1" aria-modal="true" role="dialog" style="display: none;">
-    <div class="modal-dialog modal-dialog-scrollable">
+<div class="modal fade" id="modal-autor-artigos" tabindex="-1" aria-modal="true" role="dialog" style="display: none;">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl modal-fullscreen-lg-down">
         <div class="modal-content">
-            <div class="modal-header">Artigos escritos</div>
+            <div class="modal-header">
+                <h2 class="display-6">Artigos escritos por <span id="escrito-por"></span></h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
             <div class="modal-body">
-                <p>Fdfs dofopsdf sdofposd fpo sdpofos f</p>
+                <div class="row gap-3 d-flex justify-content-center" id="feed-articles">
+
+                </div>  
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
