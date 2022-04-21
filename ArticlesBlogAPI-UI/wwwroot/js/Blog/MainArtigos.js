@@ -3,5 +3,5 @@
 var artigos;
 
 $(document).ready(function () {
-    artigos = new Artigos();
+    artigos = new Artigos(); 
 });
