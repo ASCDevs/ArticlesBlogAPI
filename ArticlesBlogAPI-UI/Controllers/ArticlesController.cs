@@ -71,7 +71,7 @@ namespace ArticlesBlogAPI_UI.Controllers
         public IActionResult SearchArticles(string searchedText)
         {
             _logger.LogInformation("Searching articles by term");
-            List<string> words = searchedText.Split(" ").ToList();
+            List<string> words = searchedText.ToLower().Split(" ").ToList();
             List<Article> articlesFound = articles!.AsQueryable().Where(x => x.TextArticle!.Trim().ToLower().Contains(searchedText.ToLower().Trim()) || words.Any(w => x.TextArticle.Trim().ToLower().Contains(w)) || words.Any(w => x.Tags!.Any(y => y.Trim().ToLower().Contains(w)))).ToList();
             if (articlesFound == null || articlesFound.Count() == 0) return Ok(new { success = false, message = "Nenhum artigo encontrado com o termo dado." });
 
